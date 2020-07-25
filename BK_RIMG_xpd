@@ -1,0 +1,106 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.3
+-- Dumped by pg_dump version 12.3
+
+-- Started on 2020-07-25 03:10:52
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 202 (class 1259 OID 16407)
+-- Name: clientes; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.clientes (
+    "Id" bigint NOT NULL,
+    "Nombre" text NOT NULL,
+    "EMail" text NOT NULL,
+    "Telefono" text NOT NULL,
+    "RFC" text NOT NULL,
+    "Domicilio" text NOT NULL
+);
+
+
+ALTER TABLE public.clientes OWNER TO postgres;
+
+--
+-- TOC entry 203 (class 1259 OID 16415)
+-- Name: clientes_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.clientes ALTER COLUMN "Id" ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME public."clientes_Id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- TOC entry 2816 (class 0 OID 16407)
+-- Dependencies: 202
+-- Data for Name: clientes; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.clientes ("Id", "Nombre", "EMail", "Telefono", "RFC", "Domicilio") FROM stdin;
+3	Gregorio Ismael Rivera Martinez	tazrimg.mx@gmail.com	2213611299	RIMG801123K57	Abanicos 2 A hacienda las fuentes segunda sección, puebla, puebla 
+4	Prueba 0	correo de prueba	telefono de prueba	RFC	Domicilio 0
+5	Prueba 1	Prueba 1	Prueba 1	Prueba 	Prueba 1
+6	Prueba 	Prueba 2	Prueba 2	Prueba 2	Prueba 2
+7	Prueba 4	Prueba 4	Prueba 4	Prueba 4	Prueba 4
+8	Prueba 5	Prueba 5	Prueba 5	Prueba 5	Prueba 5
+9	Prueba 6	Prueba 6	Prueba 6	Prueba 6	Prueba 6
+10	Prueba 7	Prueba 7	Prueba 7	Prueba 7	Prueba 7
+11	Prueba 8	Prueba 8	Prueba 8	Prueba 8	Prueba 8
+12	Prueba 9	Prueba 9	Prueba 9	Prueba 9	Prueba 9
+13	Prueba 10	Prueba 10	Prueba 10	Prueba 10	Prueba 10
+14	Prueba 11	Prueba 11	Prueba 11	Prueba 11	Prueba 11
+15	Prueba 12	Prueba 12	Prueba 12	Prueba 12	Prueba 12
+16	Prueba 13	Prueba 13	Prueba 13	Prueba 13	Prueba 13
+17	Prueba 14	Prueba 14	Prueba 14	Prueba 14	Prueba 14
+18	Prueba 15	Prueba 15	Prueba 15	Prueba 15	Prueba 15
+\.
+
+
+--
+-- TOC entry 2823 (class 0 OID 0)
+-- Dependencies: 203
+-- Name: clientes_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public."clientes_Id_seq"', 18, true);
+
+
+--
+-- TOC entry 2689 (class 2606 OID 16414)
+-- Name: clientes clientes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.clientes
+    ADD CONSTRAINT clientes_pkey PRIMARY KEY ("Id");
+
+
+-- Completed on 2020-07-25 03:10:52
+
+--
+-- PostgreSQL database dump complete
+--
+
